@@ -1,1 +1,17 @@
 plugged
+.netrwhist
+plugged/
+swap//
+backup//
+undo//
+view//
+shada/
+.viminfo
+Session.vim
+sessions/
+.netrwhist
+.DS_Store
+*.swp
+*.swo
+*.swn
+

@@ -1,3 +1,5 @@
+"" trdwyrte
+
 syntax on
 set nocompatible
 filetype on
