@@ -1,5 +1,8 @@
 "" trdwyrte
 
+" ENABLE GLOBAL CLIPBOARD
+set clipboard=unnamedplus,unnamed
+
 syntax on
 set nocompatible
 filetype on
@@ -8,7 +11,7 @@ filetype indent on
 set relativenumber
 set scrolloff=3
 set shiftwidth=4
-set tabstop=5
+set tabstop=4
 set expandtab
 set incsearch
 set hlsearch
@@ -31,10 +34,13 @@ nnoremap <esc> :nohlsearch<CR>
 nnoremap <leader>x :q<CR>
 nnoremap <leader>s :wq<CR>
 inoremap jj <esc>
+
+" split navigation
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
 " Resize split windows using arrow keys by pressing:
 noremap <c-up> <c-w>+
 noremap <c-down> <c-w>-
@@ -70,7 +76,7 @@ set statusline=
 set statusline+=\ %F\ %M\ %Y\ %R
 "middle seperator
 set statusline+=%=
-set statusline+=:%p%%
+set statusline+=%l:%p%%
 set laststatus=2
 
 " }}}
@@ -99,6 +105,10 @@ nnoremap <leader>t :call ToggleColors()<CR>
 "
 "
 " COC CONFIGURAITON ------ {{{
+
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
 " }}}
